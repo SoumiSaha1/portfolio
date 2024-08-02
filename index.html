@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumi - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <style>
+            /* General Enhancements */
+            body {
+                font-family: 'Poppins', sans-serif;
+                line-height: 1.6;
+                color: #fff;
+                background-color: #121212; /* Dark background for better contrast */
+                margin: 0;
+                padding: 0;
+            }
+        
+            /* Navigation */
+            nav {
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                background: linear-gradient(135deg, #4e4376, #2b2d3b); /* Darker gradient background */
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+            }
+        
+            nav ul {
+                display: flex;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+            }
+        
+            nav ul li {
+                list-style: none;
+            }
+        
+            nav ul li a {
+                padding: 12px 20px;
+                transition: color 0.3s ease, transform 0.3s ease;
+                font-size: 1.1rem; /* Slightly larger font for readability */
+                color: #fff; /* Original font color */
+            }
+        
+            nav ul li a:hover {
+                color: #e0e0e0;
+                transform: scale(1.1);
+                background: rgba(255, 255, 255, 0.2); /* Subtle background change on hover */
+                border-radius: 5px;
+            }
+        
+            .left {
+                font-size: 1.5rem;
+                color: #fff; /* Set text color to white */
+                font-weight: bold;
+            }
+        
+            /* First Section */
+            .firstsection {
+                background: linear-gradient(to right, rgba(0, 0, 36, 0.7), rgba(0, 0, 36, 0.5)), url('background-image.jpg') no-repeat center center/cover;
+                color: #fff;
+                padding: 70px 20px; /* Increased padding for a more spacious look */
+                text-align: center; /* Center-aligned text */
+                margin-top: 80px; /* Adjusted to account for fixed navbar */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        
+            .leftsection {
+                font-size: 2.7rem; /* Increased font size */
+                max-width: 500px; /* Adjusted width for better proportion */
+                color: #fff; /* Set text color to white */
+                margin-left: 20px; /* Shifted left */
+            }
+        
+            .leftsection .btn {
+                background: linear-gradient(135deg, #3a1c7a, #6a0f8e); /* Darker gradient background */
+                border: none;
+                padding: 15px 25px;
+                color: white;
+                border-radius: 30px;
+                font-size: 18px;
+                cursor: pointer;
+                transition: background 0.3s ease, transform 0.3s ease;
+                margin: 10px; /* Margin between buttons */
+            }
+        
+            .leftsection .btn:hover {
+                background: linear-gradient(135deg, #6a0f8e, #3a1c7a); /* Gradient flip on hover */
+                transform: scale(1.05);
+            }
+        
+            .rightsection img {
+                border-radius: 20px;
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+                width: 90%; /* Slightly larger size */
+                max-width: 400px; /* Increased max-width */
+                height: auto; /* Keep original aspect ratio */
+                margin-left: -20px; /* Shifted left */
+            }
+        
+            /* Skills Section */
+            .secondsection {
+                padding: 50px 20px;
+                background: linear-gradient(to right, #3b2a6b, #2d4b6d); /* Darker gradient background */
+                border-radius: 15px;
+                margin: 40px auto; /* Margin for spacing */
+                max-width: 1200px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+            }
+        
+            .secondsection h1 {
+                text-align: center;
+                margin-bottom: 30px;
+                color: #ecf0f1; /* Light color for headings */
+                font-size: 2.5rem; /* Larger font size for emphasis */
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+            }
+        
+            .secondsection .box {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px; /* Space between items */
+                justify-content: center;
+            }
+        
+            .secondsection .vertical {
+                background: linear-gradient(135deg, #2a2d72, #4b3f6c); /* New gradient background */
+                border-radius: 15px;
+                color: #fff;
+                padding: 20px;
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+                margin: 15px;
+                width: calc(20% - 30px); /* Adjust width with margin */
+                transition: transform 0.4s ease, background 0.4s ease;
+                text-align: center; /* Center-align text */
+                position: relative; /* For animations */
+            }
+        
+            .secondsection .vertical:hover {
+                background: linear-gradient(135deg, #4b3f6c, #2a2d72); /* Gradient flip on hover */
+                transform: translateY(-10px); /* Slight lift effect */
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+            }
+        
+            .image-top {
+                border-radius: 50%;
+                border: 3px solid #fff; /* White border */
+                margin-bottom: 15px;
+                padding: 5px;
+                background: #fff; /* White background for image */
+                width: 70px; /* Fixed width for images */
+                height: 70px; /* Fixed height for images */
+                object-fit: cover; /* Ensure images are not distorted */
+            }
+        
+            .vertical-text {
+                font-weight: bold;
+                color: #fff;
+                font-size: 1.4rem; /* Slightly larger text */
+                margin: 10px 0;
+            }
+        
+            .vertical-desc {
+                color: #f0f0f0; /* Light color for description */
+                font-size: 1rem;
+            }
+        
+            /* Animation */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        
+            .secondsection, .firstsection {
+                animation: fadeInUp 1s ease-out;
+            }
+        
+            /* Footer */
+            footer {
+                background: linear-gradient(135deg, #3b2a6b, #2d4b6d); /* Gradient background */
+                color: #fff;
+                padding: 40px 20px;
+                text-align: center;
+                position: relative; /* Ensure footer is positioned correctly */
+            }
+        
+            .footer {
+                display: flex;
+                flex-direction: column;
+                gap: 20px; /* Space between footer sections */
+                align-items: center;
+            }
+        
+            .footer h3 {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+                color: #fff; /* Heading color */
+            }
+        
+            .footer ul {
+                list-style: none;
+                display: flex;
+                gap: 20px; /* Space between list items */
+                padding: 0;
+                margin: 0;
+            }
+        
+            .footer ul li {
+                margin: 0;
+            }
+        
+            .footer ul li a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 1rem;
+                transition: color 0.3s ease;
+            }
+        
+            .footer ul li a:hover {
+                color: #ff7e5f; /* Change color on hover */
+            }
+        
+            .footer-rights {
+                font-size: 0.9rem;
+                color: #fff;
+                margin-top: 20px;
+            }
+        
+            /* Responsive Adjustments */
+            @media (max-width: 1200px) {
+                .firstsection > div {
+                    width: 80%;
+                }
+            }
+        
+            @media (max-width: 992px) {
+                .secondsection .box {
+                    flex-direction: column;
+                }
+            }
+        
+            @media (max-width: 768px) {
+                .leftsection {
+                    font-size: 1.7rem; /* Adjusted for smaller screens */
+                }
+        
+                .rightsection img {
+                    width: 100%;
+                }
+        
+                .secondsection .vertical {
+                    width: 80%;
+                    margin: 10px auto;
+                }
+            }
+        
+            @media (max-width: 480px) {
+                .leftsection {
+                    font-size: 1.5rem; /* Further adjust for very small screens */
+                }
+        
+                .secondsection .box {
+                    flex-direction: column;
+                }
+        
+                .footer ul {
+                    flex-direction: column;
+                }
+            }
+        </style>
+        
+        
+        
+        
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Soumi's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Services</a></li>
+                    <li><a href="/">Projects</a></li>
+                    <li><a href="/">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+
+        <section class="firstsection">
+            <div class="leftsection">
+                Hi, my name is <span class="purple">Soumi</span>
+                <div>and I'm a passionate</div>
+                <span id="element"></span>
+                <div> </div>
+                <button class="btn">Download Resume</button>
+                <button class="btn">Visit Github</button>
+
+
+            </div>
+
+            <div class="rightsection">
+                <img src="soumi1.png" alt="">
+            </div>
+        </section>
+
+        <section class="secondsection">
+            <span class="text-gray">What I have learnt so far</span>
+            <h1>Skills</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="c.png" alt="">
+                    <div class="vertical-text">C++</div>
+                    <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquid
+                        nesciunt, rem dolorum excepturi maxime placeat eum officiis voluptates sint quia. Repellat
+                        accusamus, ipsum enim excepturi quibusdam rerum! Aspernatur, blanditiis!</div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="java.png" alt="">
+                    <div class="vertical-text">Java</div>
+                    <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquid
+                        nesciunt, rem dolorum excepturi maxime placeat eum officiis voluptates sint quia. Repellat
+                        accusamus, ipsum enim excepturi quibusdam rerum! Aspernatur, blanditiis!</div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="python.png" alt="">
+                    <div class="vertical-text">Python</div>
+                    <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquid
+                        nesciunt, rem dolorum excepturi maxime placeat eum officiis voluptates sint quia. Repellat
+                        accusamus, ipsum enim excepturi quibusdam rerum! Aspernatur, blanditiis!</div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="html.png" alt="">
+                    <div class="vertical-text">HTML,CSS & Javascript</div>
+                    <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquid
+                        nesciunt, rem dolorum excepturi maxime placeat eum officiis voluptates sint quia. Repellat
+                        accusamus, ipsum enim excepturi quibusdam rerum! Aspernatur, blanditiis!</div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="sql.png" alt="">
+                    <div class="vertical-text">SQL</div>
+                    <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquid
+                        nesciunt, rem dolorum excepturi maxime placeat eum officiis voluptates sint quia. Repellat
+                        accusamus, ipsum enim excepturi quibusdam rerum! Aspernatur, blanditiis!</div>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Soumi's Portfolio</h3>
+            </div>
+            <div class="footer-second">
+                <ul>
+                    <li>Home</li>
+                    <li>Contact Us</li>
+                    <li>About </li>
+                    <li>Services</li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <ul>
+                    <li>Home</li>
+                    <li>Contact Us</li>
+                    <li>About </li>
+                    <li>Services</li>
+                </ul>
+            </div>
+            <div class="footer-fourth">
+                <ul>
+                    <li>Home</li>
+                    <li>Contact Us</li>
+                    <li>About </li>
+                    <li>Services</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            Copyright &#169; www.soumisportfolio.com| All rights reserved
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Web Designer', 'Software Engineer', 'Coder'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
